@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Peralta&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*  SF Pro Display"," SF Pro Icons"," Helvetica Neue"," Helvetica"," Arial",sans-serif */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+end,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    background: #202020;
+    padding: 0px 2%;
+    user-select: none;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-style: inherit;
+    font-weight: 400;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/*  nulls  */
+
+
+
+:root {
+    --color-green: #BCFE2F;
+    --color-blue: #4db5ff;
+    --color-orange: #FF7427;
+}
+
+/*   Preloaded   */
+.preloader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #202020;
+    display: flex;
+    padding: 20px;
+    animation: Preloader 1s 8s forwards;
+    z-index: 100;
+}
+
+@keyframes Preloader {
+    0% {
+        filter: blur(0px);
+    }
+
+    99% {
+        filter: blur(200px);
+    }
+
+    100% {
+        opacity: 0;
+        overflow: hidden;
+    }
+}
+
+@keyframes svgPreloader {
+    0% {
+        stroke-dashoffset: 372;
+        stroke: var(--color-green);
+    }
+
+    20% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+
+    22.5% {
+        fill: var(--color-green);
+        stroke: var(--color-green);
+    }
+
+    27.5% {
+        fill: var(--color-orange);
+        stroke: var(--color-orange);
+    }
+
+    30% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+
+    50% {
+        stroke-dashoffset: 372;
+        stroke: var(--color-orange);
+    }
+
+    50.01% {
+        stroke: var(--color-blue);
+    }
+
+    70% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+
+    72.5% {
+        fill: var(--color-blue);
+        stroke: var(--color-blue);
+    }
+
+    77.5% {
+        fill: var(--color-green);
+        stroke: var(--color-green);
+    }
+
+    80% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+
+    100% {
+        stroke-dashoffset: 372;
+        stroke: var(--color-green);
+    }
+
+}
+
+.preloader svg {
+    margin: auto;
+    max-width: 300px;
+    max-height: 300px;
+    stroke-dasharray: 372;
+    stroke-dashoffset: 372;
+}
+
+.preloader path {
+    animation: svgPreloader 10s infinite;
+}
+
+/*   Preloaded   */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+
+header {
+    height: 92px;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    border-radius: 35px;
+}
+
+header aside {
+    height: 92px;
+    width: 0%;
+    border-radius: 35px;
+    position: relative;
+    background: #20202067;
+    backdrop-filter: blur(60px);
+    z-index: 99;
+    transform: scale(1);
+    animation: widthHeader 0.6s 9.2s forwards;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@keyframes widthHeader {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blurElements {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+header .header__block-blur-green {
+    height: 92px;
+    width: 10%;
+    border-radius: 35px;
+    z-index: 98;
+    left: 20px;
+    position: absolute;
+    background: var(--color-green);
+    transform: scale(0);
+    animation: blurElements 0.4s 8.4s forwards;
+}
+
+header .header__block-blur-blue {
+    height: 80px;
+    width: 15%;
+    border-radius: 35px;
+    z-index: 98;
+    right: 20px;
+    position: absolute;
+    background: var(--color-blue);
+    transform: scale(0);
+    animation: blurElements 0.4s 8.6s forwards;
+}
+
+header .header__block-blur-orange {
+    height: 52px;
+    width: 20%;
+    border-radius: 35px;
+    z-index: 98;
+    left: 30%;
+    position: absolute;
+    background: var(--color-orange);
+    transform: scale(0);
+    animation: blurElements 0.4s 8.8s forwards;
+}
+
+.header__logo {
+    height: 100%;
+    width: 92px;
+    display: flex;
+    margin-left: 10px;
+}
+
+@keyframes logo {
+    0% {
+        font-size: 0px;
+    }
+
+    50% {
+        box-shadow: 0px 0px 0px 0px #fff;
+        font-size: 36px;
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 2px #fff;
+        font-size: 36px;
+    }
+}
+
+.header__logo span {
+    margin: auto;
+    box-shadow: 0px 0px 0px 0px #fff;
+    flex: 0 1 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: "Peralta";
+    animation: logo 0.6s 9.8s forwards;
+}
+.header__logo span a{
+
+    color: #fff;
+}
+
+.header__menu {
+    height: 100%;
+    flex: 0 360px;
+    margin-right: 32px;
+}
+
+.header__menu ul {
+    height: 100%;
+    display: flex;
+    color: #F5F5F7;
+    width: 100%;
+    letter-spacing: 1px;
+    font-weight: 200;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Poppins";
+    font-size: 22px;
+}
+
+.header__menu ul li:first-child {
+    animation: itemMenu 0.4s 10.2s forwards;
+}
+
+.header__menu ul li {
+    position: relative;
+    top: -20px;
+    transform: scale(0);
+    animation: itemMenu 0.4s 10.4s forwards;
+}
+
+.header__menu ul li:last-child {
+    animation: itemMenu 0.4s 10.6s forwards;
+}
+
+@keyframes itemMenu {
+    0% {
+        top: -20px;
+        transform: scale(0);
+    }
+
+    100% {
+        top: 0px;
+        transform: scale(1);
+    }
+}
